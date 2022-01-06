@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -6,27 +6,25 @@ import {
   Platform,
   StatusBar,
   Image,
-  Dimensions
-} from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { RFValue } from "react-native-responsive-fontsize";
-import AppLoading from "expo-app-loading";
-import * as Font from "expo-font";
-
-let customFonts = {
-  "Bubblegum-Sans": require("../assets/fonts/BubblegumSans-Regular.ttf")
-};
+  Dimensions,
+} from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { RFValue } from 'react-native-responsive-fontsize';
+import AppLoading from 'expo-app-loading';
+import * as Font from 'expo-font';
 
 export default class StoryCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fontsLoaded: false
+      fontsLoaded: false,
     };
   }
 
   async _loadFontsAsync() {
-    await Font.loadAsync(customFonts);
+    await Font.loadAsync({
+      'Bubblegum-Sans': require('../assets/fonts/BubblegumSans-Regular.ttf'),
+    });
     this.setState({ fontsLoaded: true });
   }
 
